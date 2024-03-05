@@ -1,0 +1,123 @@
+- key: "default"
+  expected: "import imageref from './myimage.jpg?as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+   
+- key: "with format"
+  expected: "import imageref from './myimage.jpg?format=webp&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      format: "webp"
+
+# options
+- key: "with option"
+  expected: "import imageref from './myimage.jpg?blur&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      options: "blur"
+
+- key: "with options but only one"
+  expected: "import imageref from './myimage.jpg?blur&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      options: 
+        - "blur"
+
+- key: "with options"
+  expected: "import imageref from './myimage.jpg?blur&flip=true&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      options: 
+        - "blur"
+        - "flip=true"
+
+# widths
+- key: "with width"
+  expected: "import imageref from './myimage.jpg?w=400&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      width: 400
+
+- key: "with widths but only one"
+  expected: "import image_randomnum from './myimage.jpg?w=400&as=srcset&as=metadata';\nconst imageref = [ image_randomnum ];"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      width: 
+        - 400
+
+- key: "with widths"
+  expected: "import imageref from './myimage.jpg?w=400;600&as=srcset&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      width: 
+        - 400
+        - 600
+
+# heights
+- key: "with height"
+  expected: "import imageref from './myimage.jpg?h=400&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      height: 400
+
+- key: "with heights but only one"
+  expected: "import image_randomnum from './myimage.jpg?h=400&as=srcset&as=metadata';\nconst imageref = [ image_randomnum ];"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      height: 
+        - 400
+
+- key: "with heights"
+  expected: "import imageref from './myimage.jpg?h=400;600&as=srcset&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      height: 
+        - 400
+        - 600
+
+# width & height
+- key: "with width and height"
+  expected: "import imageref from './myimage.jpg?h=400&w=500&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      height: 400
+      width: 500
+
+- key: "with width and heights but only one"
+  expected: "import image_randomnum from './myimage.jpg?h=400&w=500&as=srcset&as=metadata';\nconst imageref = [ image_randomnum ];"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      height: 
+        - 400
+      width: 500
+
+- key: "with width and heights"
+  expected: "import imageref from './myimage.jpg?h=400;600&w=500&as=srcset&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      height: 
+        - 400
+        - 600
+      width: 500
+
+# preset 
+- key: "with preset"
+  expected: "import imageref from './myimage.jpg?w=300&as=metadata';"
+  images:
+    - name: "imageref"
+      image: "./myimage.jpg"
+      preset: "mobile"

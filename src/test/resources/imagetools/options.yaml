@@ -1,0 +1,9 @@
+attributeName: "images"
+debug: None
+presets:
+  - name: "mobile"
+    width: 300
+
+  - name: "desktop"
+    height:
+      - 250

@@ -1,0 +1,37 @@
+import chalk from 'chalk';
+
+const log = console.log;
+
+function buildMsg(msg: string): string {
+    return chalk.bold('remark-imagetools: ') + msg;
+}
+
+export function warn(msg: string) {
+    log(chalk.yellow(buildMsg(msg)));
+}
+
+export function info(msg: string) {
+    log(buildMsg(msg));
+}
+
+export function error(msg: string, obj?: any) {
+    if (obj) {
+        log(chalk.red(buildMsg(msg) + JSON.stringify(obj, null, 4)));
+    } else {
+        log(chalk.red(buildMsg(msg)));
+    }
+}
+
+export function debug(msg: string, obj?: any) {
+    if (obj) {
+        log(chalk.blue(buildMsg(msg) + JSON.stringify(obj, null, 4)));
+    } else {
+        log(chalk.blue(buildMsg(msg)));
+    }
+}
+
+export function debugConfiguration(defaults: any, options: any, effective: any) {
+    debug("CONFIG :: Defaults:  ", defaults);
+    debug("CONFIG :: Provided:  ", options);
+    debug("CONFIG :: Effective: ", effective);
+}
