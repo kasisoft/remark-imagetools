@@ -210,7 +210,7 @@ for me to react.
 <!-- Definitions -->
 
 [build]: https://github.com/kasisoft/remark-imagetools/actions
-[build-badge]: https://github.com/kasisoft/remark-imagetools/actions/workflows/rsai.yml/badge.svg
+[build-badge]: https://github.com/kasisoft/remark-imagetools/actions/workflows/remark-imagetools.yml/badge.svg
 
 [esmonly]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 [license]: https://github.com/kasisoft/remark-svelte-auto-import/blob/main/license
