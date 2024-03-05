@@ -19,7 +19,7 @@
         "prepare": "cp -f src/main/index.d.ts lib/index.d.ts",
         "prepack": "rollup -c",
         "pack": "pnpm pack",
-        "test": "vitest"
+        "test": "vitest run"
     },
     "repository": {
         "type": "git",
