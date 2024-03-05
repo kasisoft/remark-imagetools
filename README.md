@@ -74,7 +74,7 @@ Furthermore it's meant to be used in conjunction with [Markdown] and the [svelte
 
 ## Install
 
-This package is [ESM only][esmonly]. In Node.js (version 20+), install with [pnpm]:
+This package is [ESM only][esmonly]. In Node.js (version 18+), install with [pnpm]:
 
 ```js
 pnpm i -D @kasisoft/remark-imagetools
