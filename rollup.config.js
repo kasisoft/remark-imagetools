@@ -12,9 +12,6 @@ export default [
                 sourcemap: "inline"
             }
         ],
-    external: [
-        "unist-util-visit", "path", "fs", "chalk", "unified"
-    ],
         plugins: [
             alias({
                 entries: [

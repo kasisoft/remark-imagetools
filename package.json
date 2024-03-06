@@ -1,6 +1,6 @@
 {
     "name": "@kasisoft/remark-imagetools",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A declarative approach with presets to generate imagetools urls",
     "main": "lib/bundle.esm.js",
     "types": "lib/index.d.ts",
