@@ -152,8 +152,11 @@ export interface ImageConfigPreset {
 
 export interface ImagetoolsOptions {
 
-    /* Debug.{None, Default, ComponentMap, RootBefore, RootAfter, ScriptBefore, ScriptAfter} */
-    debug              : Debug;
+    /* Debug.{None, Default, RootBefore, RootAfter, ScriptBefore, ScriptAfter, All}
+     * It's okay to use a list of string values for the debugging levels.
+     * For instance: ['RootBefore', 'RootAfter']
+     */
+    debug              : Debug | string[];
 
     /* Generate ts lang attribute for non existent script nodes */
     scriptTS?           : boolean;
@@ -174,6 +177,8 @@ export interface ImagetoolsOptions {
   * Debug.ScriptBefore: prints the script node before the transformation
   * Debug.ScriptAfter: prints the script node after the transformation
   * Debug.All: enables all outputs (convenience value)
+  * Using an array of strings representing these debug settings is also possible. For instance:
+    * ['ScriptBefore', 'RootAfter']
 * __scriptTS__ : boolean - By default a ```lang="ts"``` will be added to each create __script__ tag. If set to __false__ this won't happen.
 * __attributeName__: The name of the attribute within the frontmatter which defaults to _images_.
 * __presets__: A list of presets essentially providing named configurations.

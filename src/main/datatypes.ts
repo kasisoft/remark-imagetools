@@ -14,7 +14,7 @@ export enum Debug {
     All          = Default | RootBefore | RootAfter
 } /* ENDENUM */
 
-function parseDebug(val: any): number {
+export function parseDebug(val: any): number {
     if (typeof val === 'string') {
         switch (val) {
             case 'None': return Debug.None;
@@ -25,6 +25,9 @@ function parseDebug(val: any): number {
             case 'ScriptAfter': return Debug.ScriptAfter;
             case 'All': return Debug.All;
         }
+    } else if (Array.isArray(val)) {
+        const asArray: string[] = val;
+        return asArray.map(v => parseDebug(v)).reduce((a, b) => a | b, 0);
     }
     // we know from arktype that it's a number
     return val as number;
@@ -63,8 +66,7 @@ export const ImagetoolsOptionsDef = type({
 
     /* the attribute of the markdown providing the images */
     "attributeName?": "string",
-
-    "debug"         : ["(number|'None'|'Default'|'RootBefore'|'RootAfter'|'All')", "|>", parseDebug],
+    "debug"         : ["(number|'None'|'Default'|'RootBefore'|'RootAfter'|'ScriptBefore'|'ScriptAfter'|'All'|string[])", "|>", parseDebug],
 
     /* generate ts lang attribute for non existent script nodes */
     "scriptTS?"     : "boolean"

@@ -31,7 +31,7 @@ export interface ImagetoolsOptions {
     /* the attribute of the markdown providing the images */
     attributeName?: string,
 
-    debug: Debug | 'None' | 'Default' | 'RootBefore' | 'RootAfter' | 'All',
+    debug: Debug | 'None' | 'Default' | 'RootBefore' | 'RootAfter' | 'ScriptBefore' | 'ScriptAfter' | 'All' | string[],
 
     /* generate ts lang attribute for non existent script nodes */
     scriptTS?: boolean

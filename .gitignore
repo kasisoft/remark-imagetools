@@ -25,4 +25,5 @@ dist-ssr
 
 lib/
 *.tgz
+.vscode/
 
