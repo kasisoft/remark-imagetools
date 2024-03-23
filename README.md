@@ -156,7 +156,7 @@ export interface ImagetoolsOptions {
      * It's okay to use a list of string values for the debugging levels.
      * For instance: ['RootBefore', 'RootAfter']
      */
-    debug              : Debug | string[];
+    debug              : Debug | string | string[];
 
     /* Generate ts lang attribute for non existent script nodes */
     scriptTS?           : boolean;
