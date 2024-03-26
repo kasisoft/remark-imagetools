@@ -188,7 +188,7 @@ export interface ImagetoolsOptions {
 
 You can find an example project with various use cases here:
 
-* https://github.com/kasisoft/remark-imagetools-example
+* https://github.com/kasisoft/remark-example
 
 
 
@@ -218,7 +218,7 @@ for me to react.
 [build-badge]: https://github.com/kasisoft/remark-imagetools/actions/workflows/remark-imagetools.yml/badge.svg
 
 [esmonly]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
-[license]: https://github.com/kasisoft/remark-svelte-auto-import/blob/main/license
+[license]: https://github.com/kasisoft/remark-imagetools/blob/main/license
 [markdown]: https://markdown.de/
 [imagetools]: https://github.com/JonasKruckenberg/imagetools/tree/main
 [mdsvex]: https://mdsvex.com
