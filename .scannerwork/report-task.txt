@@ -1,0 +1,6 @@
+projectKey=remark-imagetools
+serverUrl=https://arturius.kasisoft.com/sonar
+serverVersion=9.9.6.92038
+dashboardUrl=https://arturius.kasisoft.com/sonar/dashboard?id=remark-imagetools
+ceTaskId=AZF6blOv1kJAL7WOlTKb
+ceTaskUrl=https://arturius.kasisoft.com/sonar/api/ce/task?id=AZF6blOv1kJAL7WOlTKb

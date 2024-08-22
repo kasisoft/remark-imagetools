@@ -10,6 +10,7 @@ pipeline {
         stage('Initialize') {
             steps {
                 sh 'echo "PATH = ${PATH}"'
+                sh "echo --- ${SONAR_KEY}"
             }
         }
         stage('Install pnpm') {
