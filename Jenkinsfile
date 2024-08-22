@@ -3,8 +3,9 @@ pipeline {
     tools {
         nodejs 'node-18.18.2'
     }
-    // environment {
-    // }
+    environment {
+        SONAR_KEY = credentials('sonar-key')
+    }
     stages {
         stage('Initialize') {
             steps {
@@ -35,8 +36,8 @@ pipeline {
             steps {
                 // properties such as sonar.host.url and sonar.login are configured in the m2 settings.xml for this profile
                 // sh 'mvn clean verify -Psonar -Dsonar.projectKey=kcl'
-                withSonarQubeEnv('sonarqube', credentialsId: 'sonar-key') {
-                    sh "./node_modules/sonar-scanner/bin/sonar-scanner"
+                withSonarQubeEnv('sonarqube') {
+                    sh "./node_modules/sonar-scanner/bin/sonar-scanner -Dsonar.login=${SONAR_KEY}"
                 }
             }
         }
