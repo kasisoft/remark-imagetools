@@ -27,4 +27,6 @@ lib/
 *.tgz
 .vscode/
 .scannerwork/
-	
+coverage/
+
+
