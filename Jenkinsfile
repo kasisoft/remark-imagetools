@@ -4,7 +4,7 @@ pipeline {
         nodejs 'node-18.18.2'
     }
     environment {
-        SCANNER_HOME = tool 'SonarQube Scanner'
+        SCANNER_HOME = tool 'sonarqube-6.1.0'
     }
     stages {
         stage('Initialize') {
