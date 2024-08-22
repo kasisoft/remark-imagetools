@@ -3,6 +3,9 @@ pipeline {
     tools {
         nodejs 'node-18.18.2'
     }
+    environment {
+        SCANNER_HOME = tool 'SonarQube Scanner'
+    }
     stages {
         stage('Initialize') {
             steps {
@@ -32,7 +35,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh './node_modules/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=remark-imagetools -Dsonar.language=ts -Dsonar.sources=src'
+                    sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=remark-imagetools -Dsonar.language=ts -Dsonar.sources=src'
                 }
             }
         }
