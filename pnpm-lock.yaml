@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      coverage-istanbul:
-        specifier: link:@vitest/coverage-istanbul
-        version: link:@vitest/coverage-istanbul
     devDependencies:
       '@rollup/plugin-alias':
         specifier: ^5.1.0
@@ -30,15 +26,15 @@ importers:
       '@vitest/coverage-istanbul':
         specifier: ^2.0.5
         version: 2.0.5(vitest@2.0.5)
-      '@vitest/coverage-v8':
-        specifier: ^2.0.5
-        version: 2.0.5(vitest@2.0.5)
       arktype:
         specifier: 1.0.29-alpha
         version: 1.0.29-alpha
       c8:
         specifier: ^10.1.2
         version: 10.1.2
+      coverage-istanbul:
+        specifier: link:@vitest/coverage-istanbul
+        version: link:@vitest/coverage-istanbul
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -470,11 +466,6 @@ packages:
 
   '@vitest/coverage-istanbul@2.0.5':
     resolution: {integrity: sha512-BvjWKtp7fiMAeYUD0mO5cuADzn1gmjTm54jm5qUEnh/O08riczun8rI4EtQlg3bWoRo2lT3FO8DmjPDX9ZthPw==}
-    peerDependencies:
-      vitest: 2.0.5
-
-  '@vitest/coverage-v8@2.0.5':
-    resolution: {integrity: sha512-qeFcySCg5FLO2bHHSa0tAZAOnAUbp4L6/A5JDuj9+bt53JREl8hpLjLHEWF0e/gWc8INVpJaqA7+Ene2rclpZg==}
     peerDependencies:
       vitest: 2.0.5
 
@@ -1583,24 +1574,6 @@ snapshots:
       istanbul-lib-source-maps: 5.0.6
       istanbul-reports: 3.1.7
       magicast: 0.3.4
-      test-exclude: 7.0.1
-      tinyrainbow: 1.2.0
-      vitest: 2.0.5
-    transitivePeerDependencies:
-      - supports-color
-
-  '@vitest/coverage-v8@2.0.5(vitest@2.0.5)':
-    dependencies:
-      '@ampproject/remapping': 2.3.0
-      '@bcoe/v8-coverage': 0.2.3
-      debug: 4.3.6
-      istanbul-lib-coverage: 3.2.2
-      istanbul-lib-report: 3.0.1
-      istanbul-lib-source-maps: 5.0.6
-      istanbul-reports: 3.1.7
-      magic-string: 0.30.11
-      magicast: 0.3.4
-      std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
       vitest: 2.0.5
