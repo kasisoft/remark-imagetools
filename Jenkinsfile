@@ -36,7 +36,7 @@ pipeline {
             steps {
                 // properties such as sonar.host.url and sonar.login are configured in the m2 settings.xml for this profile
                 // sh 'mvn clean verify -Psonar -Dsonar.projectKey=kcl'
-                sh './node_modules/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=remark-imagetools -Dsonar.host.url=https://arturius.kasisoft.com/sonar'
+                sh './node_modules/sonar-scanner/bin/sonar-scanner -Dsonar.token=${SONAR_KEY} -Dsonar.projectKey=remark-imagetools -Dsonar.host.url=https://arturius.kasisoft.com/sonar'
             }
         }
     }
