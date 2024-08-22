@@ -35,7 +35,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=remark-imagetools -Dsonar.language=ts -Dsonar.sources=src -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info'
+                    sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=remark-imagetools -Dsonar.language=ts -Dsonar.sources=src -Dsonar.lcov.reportPaths=coverage/lcov.info'
                 }
             }
         }
