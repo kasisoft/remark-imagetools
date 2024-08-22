@@ -35,7 +35,7 @@ pipeline {
             steps {
                 // properties such as sonar.host.url and sonar.login are configured in the m2 settings.xml for this profile
                 // sh 'mvn clean verify -Psonar -Dsonar.projectKey=kcl'
-                withSonarQubeEnv('sonarqube') {
+                withSonarQubeEnv('sonarqube', credentialsId: 'sonar-key') {
                     sh "./node_modules/sonar-scanner/bin/sonar-scanner"
                 }
             }
