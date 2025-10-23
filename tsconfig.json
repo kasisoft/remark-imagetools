@@ -4,6 +4,7 @@
         "allowJs": false,
         "module": "ES2022",
         "lib": [
+            "dom",
             "ES2022"
         ],
         "moduleResolution": "bundler",
