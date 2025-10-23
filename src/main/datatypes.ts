@@ -1,8 +1,6 @@
-import { arrayOf, type } from 'arktype';
-import { CheckResult } from 'arktype/internal/traverse/traverse.js';
+import { ArkErrors, type } from 'arktype';
 
 import { error } from '$main/log';
-
 
 export enum Debug {
     None         = 0,
@@ -62,11 +60,11 @@ export const ImageConfigDef = type({
 export const ImagetoolsOptionsDef = type({
 
     /* collection of presets used overall */
-    "presets?"      :  arrayOf(ImageConfigPresetDef),
+    "presets?"      : ImageConfigPresetDef.array(),
 
     /* the attribute of the markdown providing the images */
     "attributeName?": "string",
-    "debug"         : ["(number|'None'|'Default'|'RootBefore'|'RootAfter'|'ScriptBefore'|'ScriptAfter'|'All'|string[])", "|>", parseDebug],
+    "debug"         : ["(number|'None'|'Default'|'RootBefore'|'RootAfter'|'ScriptBefore'|'ScriptAfter'|'All'|string[])", "=>", parseDebug],
 
     /* generate ts lang attribute for non existent script nodes */
     "scriptTS?"     : "boolean"
@@ -81,18 +79,18 @@ export type ImageConfig       = typeof ImageConfigDef.infer;
 export type ImagetoolsOptions = typeof ImagetoolsOptionsDef.infer;
 
 
-function newObject<T>(obj: any, constructor: (value: any) => CheckResult<T>): T {
+function newObject<T>(obj: any, constructor: (value: any) => T | ArkErrors): T {
     const result = constructor(obj);
-    if (result.problems) {
-        const asText = JSON.stringify(result.problems);
+    if (result instanceof type.errors) {
+        const asText = JSON.stringify(result as ArkErrors);
         error("Failed to validate obj: " + asText);
         throw Error(asText);
     }
-    return result.data;
+    return result as T;
 }
 
 export function newImageConfigs(obj: any): ImageConfig[] {
-    return newObject(obj, arrayOf(ImageConfigDef));
+    return newObject(obj, ImageConfigDef.array());
 }
 
 export function newImagetoolsOptions(obj: any): ImagetoolsOptions {
